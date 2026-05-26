@@ -95,16 +95,16 @@ export default function Expertise() {
         </div>
 
         {isMobile ? (
-          <div className="arch-grid-mobile">
+          <div className="grid grid-cols-1 gap-3">
             {CLUSTERS.map((c) => (
-              <div key={c.id} className="arch-cluster-mobile">
-                <div className="head">
-                  <span className="ic" />
+              <div key={c.id} className="p-3.5 bg-[rgba(10,14,28,0.85)] backdrop-blur-md border border-[var(--border-strong)] rounded-[var(--r-md)] cursor-pointer transition-colors hover:border-[var(--cyan)]">
+                <div className="flex items-center gap-2 font-mono text-[10px] tracking-[0.14em] uppercase text-[var(--text-muted)] mb-2.5">
+                  <span className="w-3.5 h-3.5 rounded-[3px] shrink-0 border border-[var(--border)]" style={{ background: "linear-gradient(135deg, var(--cyan-soft), var(--violet-soft))" }} />
                   {c.label}
                 </div>
-                <div className="items">
+                <div className="flex flex-wrap gap-[5px]">
                   {c.items.map((item) => (
-                    <span className="item" key={item}>{item}</span>
+                    <span className="font-mono text-[10px] px-[7px] py-0.5 bg-[var(--surface)] border border-[var(--border)] rounded-[4px] text-[var(--text)]" key={item}>{item}</span>
                   ))}
                 </div>
               </div>

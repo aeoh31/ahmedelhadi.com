@@ -83,10 +83,10 @@ export default function TechOrbit() {
           </p>
         </div>
 
-        <div className="orbit-wrap" ref={wrapRef}>
+        <div className="orbit-wrap max-sm:[height:clamp(360px,100vw,640px)]" ref={wrapRef}>
           <div className="grid-overlay" />
 
-          <div className="orbit-legend">
+          <div className="orbit-legend max-sm:hidden">
             {Object.entries(GROUP_COLORS).map(([k, v]) => (
               <span className="lg" key={k}>
                 <span className="sq" style={{ background: v }} />
@@ -108,10 +108,10 @@ export default function TechOrbit() {
             />
           ))}
 
-          <div className="orbit-core">
+          <div className="orbit-core max-sm:w-[90px] max-sm:h-[90px]">
             <div>
-              <div className="l">Core</div>
-              <div className="l2">Ahmed</div>
+              <div className="l max-sm:text-[8px]">Core</div>
+              <div className="l2 max-sm:text-[14px]">Ahmed</div>
             </div>
           </div>
 
@@ -128,9 +128,9 @@ export default function TechOrbit() {
                     className="orbit-node"
                     style={{ transform: `translate(${x}px, ${y}px)` }}
                   >
-                    <div className="orbit-node-inner">
+                    <div className="orbit-node-inner max-sm:text-[10px] max-sm:px-2 max-sm:py-[5px] max-sm:gap-[5px]">
                       <span
-                        className="swatch"
+                        className="swatch max-sm:w-[6px] max-sm:h-[6px]"
                         style={{ background: GROUP_COLORS[t.group] }}
                       />
                       {t.label}

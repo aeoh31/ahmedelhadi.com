@@ -9,10 +9,10 @@ const TECH_BADGES = [
 
 export default function Hero() {
   return (
-    <section className="hero">
+    <section className="hero pt-[100px] pb-[60px] sm:pt-[140px] sm:pb-[100px]">
       <HeroCanvas />
       <div className="shell hero-inner">
-        <div>
+        <div className="text-center sm:text-left min-w-0">
           <div className="hero-status">
             <span className="pill">
               <span className="dot" />
@@ -21,12 +21,12 @@ export default function Hero() {
             <span>Based in UAE · open to remote</span>
           </div>
 
-          <h1>
+          <h1 className="max-sm:text-[40px]">
             <span className="grad">Ahmed Elhadi.</span>
-            <br />
-            Builds backends that
-            <br />
-            scale to millions.
+            <br className="max-sm:hidden" />
+            {" "}Builds backends that
+            <br className="max-sm:hidden" />
+            {" "}scale to millions.
           </h1>
 
           <div className="hero-subline">
@@ -43,7 +43,7 @@ export default function Hero() {
             architectures.
           </p>
 
-          <div className="hero-ctas">
+          <div className="hero-ctas max-sm:justify-center">
             <a className="btn btn-primary" href="#projects">
               View projects
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -64,7 +64,7 @@ export default function Hero() {
             </a>
           </div>
 
-          <div className="hero-meta">
+          <div className="hero-meta max-sm:grid-cols-2 max-sm:gap-4 max-sm:mt-9">
             <div className="hero-meta-item">
               <div className="num">5+</div>
               <div className="lbl">Years experience</div>
@@ -85,7 +85,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="ticker">
+      <div className="ticker max-sm:mt-10">
         <div className="ticker-track">
           {[...TECH_BADGES, ...TECH_BADGES].map((t, i) => (
             <span className="ticker-item" key={i}>

@@ -41,6 +41,8 @@
   --shadow-soft: 0 1px 0 rgba(255,255,255,0.04) inset, 0 24px 80px -32px rgba(0,0,0,0.6);
 }
 
+@layer base {
+
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 
@@ -99,6 +101,10 @@ h1, h2, h3, h4 {
   color: var(--text);
 }
 
+} /* end @layer base */
+
+@layer components {
+
 .eyebrow {
   font-family: var(--f-mono);
   font-size: 11px;
@@ -116,8 +122,6 @@ h1, h2, h3, h4 {
   background: var(--cyan);
   box-shadow: 0 0 12px var(--cyan);
 }
-
-.mono { font-family: var(--f-mono); }
 
 /* ============================================================
    Layout helpers
@@ -277,48 +281,11 @@ section {
 .btn-link:hover { color: var(--text); }
 
 /* ============================================================
-   Cards / surfaces
-   ============================================================ */
-
-.card {
-  background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.01));
-  border: 1px solid var(--border);
-  border-radius: var(--r-lg);
-  padding: 28px;
-  position: relative;
-  overflow: hidden;
-  backdrop-filter: blur(10px);
-}
-
-/* ============================================================
-   Pill / chip / badge
-   ============================================================ */
-
-.chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 10px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  font-family: var(--f-mono);
-  font-size: 11px;
-  color: var(--text-muted);
-  letter-spacing: 0.02em;
-}
-.chip .dot {
-  width: 6px; height: 6px; border-radius: 999px;
-  background: var(--cyan);
-}
-
-/* ============================================================
    HERO
    ============================================================ */
 
 .hero {
   min-height: 100vh;
-  padding: 140px 0 100px;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -1241,67 +1208,4 @@ footer {
   .project .metrics { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (max-width: 640px) {
-  /* Hero */
-  .hero { padding: 100px 0 60px; }
-  .hero-ctas { flex-direction: column; align-items: flex-start; }
-  .hero-meta { grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 36px; }
-  .ticker { margin-top: 40px; }
-
-  /* Expertise — mobile grid (rendered conditionally in Expertise.tsx) */
-  .arch-grid-mobile {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-  .arch-cluster-mobile {
-    padding: 14px;
-    background: rgba(10, 14, 28, 0.85);
-    backdrop-filter: blur(12px);
-    border: 1px solid var(--border-strong);
-    border-radius: var(--r-md);
-    cursor: pointer;
-    transition: border-color 0.2s;
-  }
-  .arch-cluster-mobile:hover { border-color: var(--cyan); }
-  .arch-cluster-mobile .head {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-family: var(--f-mono);
-    font-size: 10px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 10px;
-  }
-  .arch-cluster-mobile .ic {
-    width: 14px; height: 14px;
-    border-radius: 3px;
-    flex-shrink: 0;
-    background: linear-gradient(135deg, var(--cyan-soft), var(--violet-soft));
-    border: 1px solid var(--border);
-  }
-  .arch-cluster-mobile .items { display: flex; flex-wrap: wrap; gap: 5px; }
-  .arch-cluster-mobile .item {
-    font-family: var(--f-mono);
-    font-size: 10px;
-    padding: 2px 7px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    color: var(--text);
-  }
-
-  /* TechOrbit */
-  .orbit-wrap { height: clamp(360px, 100vw, 640px); }
-  .orbit-core { width: 90px; height: 90px; }
-  .orbit-core .l { font-size: 8px; }
-  .orbit-core .l2 { font-size: 14px; }
-  .orbit-node-inner { font-size: 10px; padding: 5px 8px; gap: 5px; }
-  .orbit-node .swatch { width: 6px; height: 6px; }
-  .orbit-legend { display: none; }
-
-  /* Footer */
-  .footer-inner { flex-direction: column; align-items: center; text-align: center; }
-}
+} /* end @layer components */
