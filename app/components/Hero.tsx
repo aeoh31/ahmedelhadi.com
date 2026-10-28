@@ -1,10 +1,10 @@
 import HeroCanvas from "./HeroCanvas";
 
 const TECH_BADGES = [
-  "Node.js", "TypeScript", "NestJS", "Express.js", "Vue.js", "Angular",
-  "React", "Next.js", "AWS", "Docker", "Kubernetes", "Redis",
-  "RabbitMQ", "Kafka", "PostgreSQL", "MongoDB", "Elasticsearch",
-  "Jest", "Playwright", "GraphQL",
+  "Node.js", "TypeScript", "NestJS", "Express.js", "Python", "FastAPI",
+  "Java", "Spring Boot", "React", "Next.js", "Vue.js", "Nuxt",
+  "PostgreSQL", "MongoDB", "Redis", "Kafka", "RabbitMQ", "AWS", "Azure",
+  "GCP", "Docker", "Kubernetes", "Terraform", "GraphQL", "n8n", "MCP",
 ];
 
 export default function Hero() {
@@ -16,31 +16,31 @@ export default function Hero() {
           <div className="hero-status">
             <span className="pill">
               <span className="dot" />
-              Available · Q3 2026
+              Available now
             </span>
-            <span>Based in UAE · open to remote</span>
+            <span>Based in Abu Dhabi, UAE · open to remote</span>
           </div>
 
           <h1 className="max-sm:text-[40px]">
             <span className="grad">Ahmed Elhadi.</span>
             <br className="max-sm:hidden" />
-            {" "}Builds backends that
+            {" "}Builds the platforms
             <br className="max-sm:hidden" />
-            {" "}scale to millions.
+            {" "}teams run on.
           </h1>
 
           <div className="hero-subline">
-            Senior Full Stack Engineer.&nbsp;
+            Senior Software Engineer.&nbsp;
             <span>
-              Cloud-native applications, distributed systems, and the unglamorous
-              infrastructure that keeps them online.
+              Backend-heavy full stack work across fintech, live events, and AI
+              automation.
             </span>
           </div>
 
           <p className="hero-desc">
-            Backend-focused engineer with 5+ years shipping fintech platforms, enterprise
-            event systems, and real-time applications on AWS, Kubernetes, and event-driven
-            architectures.
+            Software engineer with 5+ years building production platforms end to end, from
+            APIs and event-driven services to the dashboards people use every day, running
+            on AWS.
           </p>
 
           <div className="hero-ctas max-sm:justify-center">
@@ -70,16 +70,16 @@ export default function Hero() {
               <div className="lbl">Years experience</div>
             </div>
             <div className="hero-meta-item">
-              <div className="num">10+</div>
-              <div className="lbl">Enterprise projects</div>
-            </div>
-            <div className="hero-meta-item">
-              <div className="num">M+</div>
-              <div className="lbl">API requests / day</div>
-            </div>
-            <div className="hero-meta-item">
               <div className="num">99.9%</div>
-              <div className="lbl">Service uptime</div>
+              <div className="lbl">Platform uptime</div>
+            </div>
+            <div className="hero-meta-item">
+              <div className="num">−80%</div>
+              <div className="lbl">API response times</div>
+            </div>
+            <div className="hero-meta-item">
+              <div className="num">25h</div>
+              <div className="lbl">Manual work automated / week</div>
             </div>
           </div>
         </div>
