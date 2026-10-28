@@ -52,6 +52,14 @@ export const EXPERIENCE = [
       "Saved the team about 10 hours a week by introducing AI workflows in n8n and wiring them into the dashboard.",
       "Kept the platform at 99.9% uptime by running it on AWS with Docker, EC2, S3, CloudFront, RDS, DynamoDB and SNS.",
     ],
+    more: [
+      "Gave operations teams a fast, consistent dashboard by building it in React and Next.js with Tailwind CSS and shadcn/ui, using TanStack Query for server state and Zustand for UI state.",
+      "Gave managers live visibility into inventory and events by building reporting views with Recharts and D3.js.",
+      "Kept public event websites current for about 5,000 monthly visitors by maintaining live event data, contact and lead forms, and real-time updates over WebSockets.",
+      "Improved search visibility and page speed of the public event websites by building them in Next.js with server-side rendering.",
+      "Raised code quality across the team by setting coding standards through code reviews, testing and documentation, and by mentoring junior engineers.",
+      "Shipped features that matched business needs by working with product and design to turn requirements into releases across the dashboard and public sites.",
+    ],
     stack: ["NestJS", "TypeScript", "React", "Next.js", "PostgreSQL", "MongoDB", "Redis", "AWS", "n8n"],
   },
   {
@@ -66,6 +74,14 @@ export const EXPERIENCE = [
       "Secured onboarding and money movement by designing authentication, KYC and payment workflows with third-party providers.",
       "Enabled real-time data flow between trading services by building event-driven microservices on Kafka and RabbitMQ.",
     ],
+    more: [
+      "Let each client launch under its own brand from one codebase by building a themeable white-label UI with Material Design components and Tailwind CSS.",
+      "Kept the trading UI responsive under high-frequency updates by managing order books, positions and account data with Redux and TanStack Query.",
+      "Protected financial data across client apps by designing secure REST and GraphQL APIs with Node.js and NestJS.",
+      "Shipped reliably to production by deploying to AWS and Azure with Docker and Kubernetes, working with DevOps on CI/CD and monitoring.",
+      "Improved backend performance and stability through testing, monitoring and PostgreSQL and MongoDB tuning.",
+      "Kept delivery on track by planning sprints, delegating work across the engineering team and setting code review and documentation standards.",
+    ],
     stack: ["Node.js", "TypeScript", "Kafka", "RabbitMQ", "PostgreSQL", "React", "AWS", "Azure"],
   },
   {
@@ -77,6 +93,9 @@ export const EXPERIENCE = [
       "Supported ERP inventory, orders and invoicing by building backend services and APIs with Node.js and Express.js.",
       "Gave staff usable ERP screens by building them in Vue.js with Pinia and Bootstrap.",
       "Sped up reports and page loads by tuning PostgreSQL queries and schemas.",
+    ],
+    more: [
+      "Upheld code quality by taking part in code reviews and testing.",
     ],
     stack: ["Express.js", "Vue.js", "PostgreSQL"],
   },
