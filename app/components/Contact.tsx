@@ -1,62 +1,49 @@
+import Icon from "./Icon";
+import { PROFILE } from "../content";
+
 export default function Contact() {
   return (
-    <section id="contact" className="contact">
-      <div className="shell">
-        <span className="eyebrow" style={{ justifyContent: "center", display: "inline-flex" }}>
-          07 — Contact
-        </span>
-        <h2 style={{ marginTop: 20 }}>
-          Let&apos;s build <span className="grad">something reliable</span>
-          <br />
-          together.
-        </h2>
+    <section id="contact" className="section contact" aria-labelledby="contact-title">
+      <div className="shell contact-inner" data-reveal>
+        <p className="eyebrow">
+          <span aria-hidden="true">05 / </span>contact
+        </p>
+        <h2 id="contact-title">Let&apos;s build something reliable together.</h2>
         <p className="lead">
           I&apos;m open to full-time software engineering roles, remote or in the UAE (Abu Dhabi or
           Dubai), and I can start immediately.
         </p>
-        <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-          <a className="btn btn-primary" href="mailto:ahmedelhadi.oh@gmail.com">
-            ahmedelhadi.oh@gmail.com
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path d="M5 12h14M13 5l7 7-7 7" />
-            </svg>
+
+        <div className="actions">
+          <a className="btn btn-primary" href={`mailto:${PROFILE.email}`}>
+            <Icon name="mail" size={16} />
+            Email me
           </a>
-          <a
-            className="btn btn-ghost"
-            href="https://linkedin.com/in/ahmed-elhadi"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a className="btn btn-secondary" href={PROFILE.linkedin} target="_blank" rel="noopener noreferrer">
             LinkedIn
+            <Icon name="arrowUpRight" size={16} />
+            <span className="sr-only">(opens in a new tab)</span>
           </a>
         </div>
 
-        <div className="contact-cards">
-          <a className="contact-card" href="mailto:ahmedelhadi.oh@gmail.com">
-            <div className="lbl">Email</div>
-            <div className="val">ahmedelhadi.oh@gmail.com</div>
-          </a>
-          <a
-            className="contact-card"
-            href="https://linkedin.com/in/ahmed-elhadi"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div className="lbl">LinkedIn</div>
-            <div className="val">/in/ahmed-elhadi</div>
-          </a>
-          <div className="contact-card" style={{ cursor: "default" }}>
-            <div className="lbl">Location</div>
-            <div className="val">Abu Dhabi, UAE · GMT+4</div>
-          </div>
-        </div>
+        <ul className="contact-list">
+          <li>
+            <span className="contact-label">Email</span>
+            <a href={`mailto:${PROFILE.email}`}>{PROFILE.email}</a>
+          </li>
+          <li>
+            <span className="contact-label">LinkedIn</span>
+            <a href={PROFILE.linkedin} target="_blank" rel="noopener noreferrer">
+              {PROFILE.linkedinLabel}
+            </a>
+          </li>
+          <li>
+            <span className="contact-label">Location</span>
+            <span>
+              {PROFILE.location} · {PROFILE.timezone}
+            </span>
+          </li>
+        </ul>
       </div>
     </section>
   );
