@@ -23,6 +23,19 @@ export default function Experience() {
                     <li key={b}>{b}</li>
                   ))}
                 </ul>
+                {e.more && (
+                  <details className="more">
+                    <summary>
+                      <span className="more-closed">Show {e.more.length} more</span>
+                      <span className="more-open">Show less</span>
+                    </summary>
+                    <ul className="bullets">
+                      {e.more.map((b) => (
+                        <li key={b}>{b}</li>
+                      ))}
+                    </ul>
+                  </details>
+                )}
                 <ul className="tags" aria-label="Stack">
                   {e.stack.map((s) => (
                     <li key={s}>{s}</li>

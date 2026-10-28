@@ -870,6 +870,54 @@ a {
   background: var(--accent);
 }
 
+.more {
+  margin: calc(-1 * var(--space-2)) 0 var(--space-4);
+}
+
+.more > .bullets {
+  margin-bottom: 0;
+}
+
+.more summary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 44px;
+  font-family: var(--font-code);
+  font-size: 0.875rem;
+  color: var(--accent);
+  cursor: pointer;
+  list-style: none;
+}
+
+.more summary::-webkit-details-marker {
+  display: none;
+}
+
+.more summary::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+.more[open] summary::after {
+  transform: translateY(2px) rotate(-135deg);
+}
+
+.more summary:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.more[open] .more-closed,
+.more:not([open]) .more-open {
+  display: none;
+}
+
 @media (min-width: 768px) {
   .job {
     grid-template-columns: 220px minmax(0, 1fr);
