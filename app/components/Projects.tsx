@@ -23,7 +23,7 @@ function TradingPreview() {
           strokeDasharray="3 6"
         />
       ))}
-      {["Market", "Order", "Risk", "Ledger", "Reporting"].map((n, i) => {
+      {["Market", "Orders", "Brokers", "KYC", "Payments"].map((n, i) => {
         const x = 60 + i * 110;
         return (
           <g key={n}>
@@ -83,7 +83,7 @@ function TradingPreview() {
       >
         Kafka — event log
       </text>
-      {["PG", "Redis", "ES"].map((n, i) => {
+      {["PostgreSQL", "MongoDB", "Redis"].map((n, i) => {
         const x = 120 + i * 170;
         return (
           <g key={n}>
@@ -153,7 +153,7 @@ function EventsPreview() {
         const a = (i / 8) * Math.PI * 2 - Math.PI / 2;
         const x = 300 + Math.cos(a) * 180;
         const y = 110 + Math.sin(a) * 80;
-        const labels = ["ticket", "scan", "stream", "chat", "push", "stage", "metrics", "ops"];
+        const labels = ["events", "stock", "leads", "sales", "sites", "n8n", "reports", "alerts"];
         return (
           <g key={i}>
             <line
@@ -211,7 +211,7 @@ function RealtimePreview() {
               fontFamily="JetBrains Mono, monospace"
               fontSize="9"
             >
-              client{i + 1}
+              visitor {i + 1}
             </text>
             <line
               x1={x + 37}
@@ -241,7 +241,7 @@ function RealtimePreview() {
         fontFamily="JetBrains Mono, monospace"
         fontSize="10"
       >
-        WS Gateway · Redis
+        Next.js SSR · WebSockets
       </text>
       {Array.from({ length: 4 }).map((_, i) => {
         const x = 80 + i * 130;
@@ -272,7 +272,7 @@ function RealtimePreview() {
               fontFamily="JetBrains Mono, monospace"
               fontSize="9"
             >
-              worker {i + 1}
+              {["events", "leads", "CMS", "CRM"][i]}
             </text>
           </g>
         );
@@ -311,7 +311,7 @@ function MicroPreview() {
               fontFamily="JetBrains Mono, monospace"
               fontSize="10"
             >
-              svc-{i + 1}
+              {["trigger", "LLM", "MCP", "RAG", "action", "dashboard"][i]}
             </text>
             <text
               x={x + 24}
@@ -320,7 +320,7 @@ function MicroPreview() {
               fontFamily="JetBrains Mono, monospace"
               fontSize="8"
             >
-              node · k8s
+              n8n flow
             </text>
             <line
               x1={x + 150}
@@ -341,51 +341,51 @@ const PROJECTS = [
   {
     size: "wide",
     ptag: "Fintech · Trading",
-    title: "AlphaForge — Real-time market platform",
-    desc: "A trading platform with millisecond-sensitive ingestion, idempotent settlement, and audit-grade traceability. Designed the event-log topology and partitioning strategy that survived burst loads from market open.",
-    stack: ["NestJS", "Kafka", "PostgreSQL", "Redis", "Grafana"],
+    title: "AlphaForge — White-label trading platform",
+    desc: "One codebase that each client launched under its own brand: market data, order execution, broker integrations, KYC and payments, streamed live to React trading screens. Owned products end to end, from requirements to deployment and monitoring.",
+    stack: ["Node.js", "TypeScript", "Kafka", "RabbitMQ", "PostgreSQL", "React"],
     metrics: [
-      { n: "12k+", l: "events / sec" },
-      { n: "<40ms", l: "p99 ingest" },
-      { n: "99.99%", l: "ordered delivery" },
+      { n: "Multi", l: "client brands, one codebase" },
+      { n: "Live", l: "prices over WebSockets" },
+      { n: "2", l: "clouds: AWS + Azure" },
     ],
     Preview: TradingPreview,
   },
   {
     size: "narrow",
-    ptag: "Enterprise · Events",
-    title: "7 Pulse — Event ops hub",
-    desc: "Backend for live event ticketing, scanning, attendee comms and operator dashboards. Designed the hub-and-spoke event topology around a domain bus.",
-    stack: ["NestJS", "Redis", "PostgreSQL", "WebSocket"],
+    ptag: "Events · Internal tools",
+    title: "7 Pulse — Event operations hub",
+    desc: "The internal dashboard and CRM the company runs on: storyboards, inventory, event planning, reporting and leads from the public sites.",
+    stack: ["NestJS", "React", "PostgreSQL", "MongoDB", "AWS"],
     metrics: [
-      { n: "30+", l: "live events" },
-      { n: "M+", l: "attendees served" },
+      { n: "40", l: "staff using it" },
+      { n: "15h", l: "saved / week" },
     ],
     Preview: EventsPreview,
   },
   {
     size: "half",
-    ptag: "Real-time",
-    title: "Live comms gateway",
-    desc: "WebSocket fan-out with Redis pub/sub, presence tracking, and worker pools for back-pressure aware delivery to mobile and web clients.",
-    stack: ["Node.js", "Redis", "WebSocket", "BullMQ"],
+    ptag: "Real-time · Web",
+    title: "Live event websites",
+    desc: "Public event sites built in Next.js with server-side rendering for speed and SEO, live event data over WebSockets, and contact forms that feed leads straight into the CRM.",
+    stack: ["Next.js", "Socket.io", "Node.js", "CloudFront"],
     metrics: [
-      { n: "50k", l: "concurrent sockets" },
-      { n: "<80ms", l: "fan-out p95" },
-      { n: "4×", l: "throughput vs v1" },
+      { n: "5k", l: "monthly visitors" },
+      { n: "30", l: "events / year" },
+      { n: "99.9%", l: "uptime" },
     ],
     Preview: RealtimePreview,
   },
   {
     size: "half",
-    ptag: "Cloud · Microservices",
-    title: "Internal services platform",
-    desc: "Reusable platform for spinning up NestJS microservices on Kubernetes with auth, observability and CI/CD baked in. Cut new-service setup from days to hours.",
-    stack: ["NestJS", "Kubernetes", "Helm", "ArgoCD"],
+    ptag: "AI · Automation",
+    title: "AI automation layer",
+    desc: "n8n agent workflows, MCP servers and LLM calls from Node.js, wired into the internal dashboard so the team stops doing repetitive work by hand.",
+    stack: ["n8n", "MCP", "OpenAI", "Claude", "Node.js"],
     metrics: [
-      { n: "12+", l: "services on platform" },
-      { n: "−85%", l: "setup time" },
-      { n: "0", l: "manual deploys" },
+      { n: "10h", l: "saved / week" },
+      { n: "MCP", l: "LLM tooling" },
+      { n: "RAG", l: "embeddings + vector search" },
     ],
     Preview: MicroPreview,
   },
@@ -399,8 +399,8 @@ export default function Projects() {
           <span className="eyebrow">05 — Projects</span>
           <h2>Selected systems work.</h2>
           <p>
-            A few projects that capture the kind of work I enjoy: high-throughput, multi-tenant, and
-            production-real. NDAs apply; what I can share lives below.
+            Production work from my last two roles: multi-client, real-time, and used by real teams
+            every day. NDAs apply, so the details stay high level.
           </p>
         </div>
 

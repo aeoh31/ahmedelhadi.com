@@ -6,13 +6,13 @@ export default function Contact() {
           07 — Contact
         </span>
         <h2 style={{ marginTop: 20 }}>
-          Let&apos;s build <span className="grad">scalable systems</span>
+          Let&apos;s build <span className="grad">something reliable</span>
           <br />
           together.
         </h2>
         <p className="lead">
-          I&apos;m taking on selected contract and full-time work in 2026. Backend-heavy, distributed
-          systems, and cloud platform projects are where I do my best work.
+          I&apos;m open to full-time software engineering roles, remote or in the UAE (Abu Dhabi or
+          Dubai), and I can start immediately.
         </p>
         <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
           <a className="btn btn-primary" href="mailto:ahmedelhadi.oh@gmail.com">
@@ -54,7 +54,7 @@ export default function Contact() {
           </a>
           <div className="contact-card" style={{ cursor: "default" }}>
             <div className="lbl">Location</div>
-            <div className="val">UAE · GMT+4</div>
+            <div className="val">Abu Dhabi, UAE · GMT+4</div>
           </div>
         </div>
       </div>

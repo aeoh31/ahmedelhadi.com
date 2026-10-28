@@ -10,7 +10,8 @@ const TECH_ORBIT = [
   { ring: 2, label: "React", group: "frontend" },
   { ring: 2, label: "Next.js", group: "frontend" },
   { ring: 2, label: "Vue", group: "frontend" },
-  { ring: 2, label: "Angular", group: "frontend" },
+  { ring: 2, label: "Python", group: "backend" },
+  { ring: 2, label: "Java", group: "backend" },
   { ring: 2, label: "Tailwind", group: "frontend" },
   { ring: 3, label: "PostgreSQL", group: "data" },
   { ring: 3, label: "MongoDB", group: "data" },
@@ -19,8 +20,9 @@ const TECH_ORBIT = [
   { ring: 3, label: "RabbitMQ", group: "messaging" },
   { ring: 3, label: "AWS", group: "cloud" },
   { ring: 3, label: "Docker", group: "cloud" },
-  { ring: 3, label: "Kubernetes", group: "cloud" },
-  { ring: 3, label: "Jest", group: "qa" },
+  { ring: 3, label: "Terraform", group: "cloud" },
+  { ring: 3, label: "n8n", group: "ai" },
+  { ring: 3, label: "MCP", group: "ai" },
   { ring: 3, label: "Playwright", group: "qa" },
 ] as const;
 
@@ -30,6 +32,7 @@ const GROUP_COLORS: Record<string, string> = {
   data: "var(--green)",
   messaging: "var(--amber)",
   cloud: "#7dd3fc",
+  ai: "#fca5a5",
   qa: "#f0abfc",
 };
 
