@@ -1,9 +1,14 @@
 import SectionHead from "./SectionHead";
+import { CaseDiagram } from "./Illustrations";
 import { WORK } from "../content";
 
 export default function Work() {
   return (
-    <section id="work" className="section section-alt" aria-labelledby="work-title">
+    <section
+      id="work"
+      className="section section-alt"
+      aria-labelledby="work-title"
+    >
       <div className="shell">
         <SectionHead
           id="work"
@@ -25,6 +30,9 @@ export default function Work() {
                   </p>
                   <h3>{w.title}</h3>
                 </div>
+              </div>
+              <div className="case-visual">
+                <CaseDiagram kind={w.visual} />
               </div>
               <dl className="case-body">
                 <div>
