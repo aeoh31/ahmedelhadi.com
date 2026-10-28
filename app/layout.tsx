@@ -1,26 +1,19 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
 // Self-hosted (latin subset, variable weight) so the build never has to
 // fetch from Google Fonts; that fetch made CI builds fail intermittently.
-const spaceGrotesk = localFont({
-  src: "./fonts/SpaceGrotesk.woff2",
-  variable: "--font-space-grotesk",
-  weight: "400 600",
-  display: "swap",
-});
-
-const manrope = localFont({
-  src: "./fonts/Manrope.woff2",
-  variable: "--font-manrope",
-  weight: "300 600",
+const plexSans = localFont({
+  src: "./fonts/IBMPlexSans.woff2",
+  variable: "--font-sans",
+  weight: "400 700",
   display: "swap",
 });
 
 const jetbrainsMono = localFont({
   src: "./fonts/JetBrainsMono.woff2",
-  variable: "--font-jetbrains-mono",
+  variable: "--font-mono",
   weight: "400 500",
   display: "swap",
 });
@@ -37,18 +30,25 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#fafafa" },
+    { media: "(prefers-color-scheme: dark)", color: "#09090b" },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${spaceGrotesk.variable} ${manrope.variable} ${jetbrainsMono.variable}`}
-    >
+    <html lang="en" className={`${plexSans.variable} ${jetbrainsMono.variable}`}>
       <body>
-        <main>{children}</main>
+        <a className="skip-link" href="#main">
+          Skip to content
+        </a>
+        {children}
       </body>
     </html>
   );

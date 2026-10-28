@@ -1,27 +1,27 @@
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
 import About from "./components/About";
-import Expertise from "./components/Expertise";
-import SystemsArchitecture from "./components/SystemsArchitecture";
+import Work from "./components/Work";
 import Experience from "./components/Experience";
-import Projects from "./components/Projects";
-import TechOrbit from "./components/TechOrbit";
+import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Reveal from "./components/Reveal";
 
 export default function Home() {
   return (
     <>
       <Nav />
-      <Hero />
-      <About />
-      <Expertise />
-      <SystemsArchitecture />
-      <Experience />
-      <Projects />
-      <TechOrbit />
-      <Contact />
+      <main id="main">
+        <Hero />
+        <About />
+        <Work />
+        <Experience />
+        <Skills />
+        <Contact />
+      </main>
       <Footer />
+      <Reveal />
     </>
   );
 }
