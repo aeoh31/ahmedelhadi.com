@@ -102,6 +102,7 @@ export const EDUCATION = {
 export const WORK = [
   {
     tag: "Fintech",
+    visual: "trading",
     title: "White-label trading platform",
     org: "AlphaForge Labs",
     problem: "Several clients each needed a trading platform under their own brand.",
@@ -111,6 +112,7 @@ export const WORK = [
   },
   {
     tag: "Internal tools",
+    visual: "ops",
     title: "Event operations hub",
     org: "7 Pulse Events",
     problem: "Event operations for sales, organizers and managers were run by hand.",
@@ -120,6 +122,7 @@ export const WORK = [
   },
   {
     tag: "Real-time web",
+    visual: "live",
     title: "Live event websites",
     org: "7 Pulse Events",
     problem: "Each event needed a fast public site with live details and a way to capture leads.",
@@ -129,6 +132,7 @@ export const WORK = [
   },
   {
     tag: "AI",
+    visual: "ai",
     title: "AI automation layer",
     org: "7 Pulse Events",
     problem: "The team spent hours every week on repetitive manual work.",

@@ -517,6 +517,158 @@ a {
   }
 }
 
+.hero-grid {
+  display: grid;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.hero-copy {
+  min-width: 0;
+}
+
+.hero-visual {
+  max-width: 520px;
+}
+
+@media (min-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    gap: var(--space-7);
+  }
+}
+
+/* ---------- Diagrams ---------- */
+
+.diagram {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.dg-node rect {
+  fill: var(--card);
+  stroke: var(--border-strong);
+  stroke-width: 1;
+}
+
+.dg-node text,
+.dg-live text {
+  fill: var(--fg);
+  font-family: var(--font-code);
+  font-size: 13px;
+}
+
+.case-diagram .dg-node text {
+  font-size: 11px;
+}
+
+.dg-node-strong rect {
+  fill: color-mix(in srgb, var(--accent) 10%, var(--card));
+  stroke: var(--accent);
+}
+
+.dg-lines,
+.dg-lines path {
+  fill: none;
+  stroke: var(--border-strong);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 4;
+}
+
+.flow-dot {
+  fill: var(--accent);
+}
+
+.dg-frame rect,
+.dg-frame path {
+  fill: none;
+  stroke: var(--border-strong);
+}
+
+.dg-frame rect {
+  fill: var(--card);
+}
+
+.dg-muted * {
+  fill: var(--border);
+}
+
+.dg-bar {
+  fill: var(--accent);
+  opacity: 0.85;
+  transform-box: fill-box;
+  transform-origin: bottom;
+  animation: dg-bar 3.2s var(--ease-out) infinite alternate;
+}
+
+@keyframes dg-bar {
+  from {
+    transform: scaleY(0.45);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+.dg-live rect {
+  fill: var(--accent-soft);
+  stroke: var(--accent);
+}
+
+.dg-live text {
+  font-size: 9px;
+  font-weight: 500;
+  fill: var(--accent);
+}
+
+.dg-pulse {
+  fill: var(--success);
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: dg-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes dg-pulse {
+  50% {
+    opacity: 0.35;
+    transform: scale(0.7);
+  }
+}
+
+.dg-socket {
+  stroke: var(--accent);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 4;
+  animation: dg-dash 1s linear infinite;
+}
+
+@keyframes dg-dash {
+  to {
+    stroke-dashoffset: -8;
+  }
+}
+
+.case-visual {
+  padding: var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flow-dot {
+    display: none;
+  }
+
+  .dg-bar,
+  .dg-pulse,
+  .dg-socket {
+    animation: none;
+  }
+}
+
 /* ---------- About ---------- */
 
 .about-grid {
